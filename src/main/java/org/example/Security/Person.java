@@ -1,10 +1,7 @@
 package org.example.Security;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDateTime;
 
@@ -96,7 +93,7 @@ public class Person {
         this.registrationDate = registrationDate;
     }
 
-    public PersonDTO getDTO(){
+    public PersonDTO getDTO() {
         return new PersonDTO(login, domain, role, registrationDate);
     }
 }
