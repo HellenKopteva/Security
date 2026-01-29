@@ -31,7 +31,5 @@ public class PersonDTO { //Сделал проверки данных уже в�
     public LocalDateTime getRegistrationDate() {
         return registrationDate;
     }
-    //делать person из personDto будет неправильно, лучше создавать БД и запрашивать оттуда, а то создадим пользоателя которого нет в БД?????
-    //да и id не хочу давать dto
 
 }
