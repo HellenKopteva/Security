@@ -40,6 +40,7 @@ public class DebugAuthenticationProvider implements AuthenticationProvider {
         // Получаем хэш из БД
         String storedPassword = userDetails.getPassword();
         log.info("Пароль из БД (хэш): {}", storedPassword);
+        log.info("Роль {}", userDetails.getAuthorities().toString());
 
         // Проверяем пароль
         boolean passwordMatches = passwordEncoder.matches(rawPassword, storedPassword);

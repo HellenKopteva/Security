@@ -1,5 +1,7 @@
-package org.example.Security;
+package org.example.Security.controllers;
 
+import org.example.Security.GlobalExceptionHandler;
+import org.example.Security.service.PersonApiInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -29,7 +31,7 @@ public class HomeController {
         System.out.println("Логин: "+userDetails.getUsername()+" Пароль:  "+userDetails.getPassword());
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_JSON)
-                .body("Hello, " + userDetails.getUsername() + "!");
+                .body("Ну, удачной охоты, сталкер, " + userDetails.getUsername() + "!");
     }
 
     @GetMapping("/loginNew")

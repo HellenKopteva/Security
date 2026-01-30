@@ -1,7 +1,10 @@
-package org.example.Security;
+package org.example.Security.service;
 
+import org.example.Security.models.Person;
+import org.example.Security.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,8 +29,8 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException(login));
 
         System.out.println(user.toString());
-        return org.springframework.security.core.userdetails.User
-                .withUsername(user.getLogin())
+        return User.builder()
+                .username(user.getLogin())
                 .password(user.getPassword())
                 .authorities(new SimpleGrantedAuthority("ROLE_" + user.getRole()))// Добавляем префикс ROLE_ (стандарт Spring Security)
                 .build();

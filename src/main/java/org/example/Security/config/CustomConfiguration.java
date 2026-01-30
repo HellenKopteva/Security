@@ -1,4 +1,4 @@
-package org.example.Security;
+package org.example.Security.config;
 
 import com.github.javafaker.Faker;
 import org.springframework.context.annotation.Bean;

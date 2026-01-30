@@ -1,6 +1,9 @@
-package org.example.Security;
+package org.example.Security.service;
 
 import com.github.javafaker.Faker;
+import org.example.Security.models.Person;
+import org.example.Security.models.PersonDTO;
+import org.example.Security.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;

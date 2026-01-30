@@ -1,9 +1,8 @@
-package org.example.Security;
+package org.example.Security.service;
 
+import org.example.Security.models.PersonDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.List;
 
 public interface PersonApiInterface {//интерфейс укажет если в какойто из реализациии мы забыли переопределить метод
     ResponseEntity<PersonDTO> createUser(UserDetails userDetails, boolean isAdmin);
