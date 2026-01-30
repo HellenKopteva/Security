@@ -100,16 +100,16 @@ public class PersonApiService implements PersonApiInterface {
     public void generationData(){
         Random random = new Random();
         if(personRepository.count()==0){
-            if (!personRepository.existsPersonByLogin("daniil")) {
+            if (!personRepository.existsByLogin("daniil")) {
                 personRepository.save(new Person("daniil",passwordEncoder.encode("daniil123"),"qvaqva@gmail.com","USER",LocalDateTime.now()));
             }
-            if (!personRepository.existsPersonByLogin("elena")) {
+            if (!personRepository.existsByLogin("elena")) {
                 personRepository.save(new Person("elena",passwordEncoder.encode("elena123"),"qvaqva1@gmail.com","ADMIN",LocalDateTime.now()));
             }
-            if (!personRepository.existsPersonByLogin("mikhail")) {
+            if (!personRepository.existsByLogin("mikhail")) {
                 personRepository.save(new Person("mikhail",passwordEncoder.encode("mikhail123"),"qvaqva2@gmail.com","USER",LocalDateTime.now()));
             }
-            if (!personRepository.existsPersonByLogin("kittony")) {
+            if (!personRepository.existsByLogin("kittony")) {
                 personRepository.save(new Person("kittony",passwordEncoder.encode("kittony123"),"qvaqva3@gmail.com","ADMIN",LocalDateTime.now()));
             }
             for (int i = 0; i < 10; i++) {

@@ -16,7 +16,5 @@ public interface PersonRepository extends JpaRepository<Person,Long> {
 
     boolean existsByLogin(String login);
 
-    Optional<Object> findPersonByLogin(String login);
-
-    boolean existsPersonByLogin(String login);
+    Optional<Person> findPersonByLogin(String login);
 }

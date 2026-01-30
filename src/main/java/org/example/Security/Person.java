@@ -45,6 +45,10 @@ public class Person {
         this.registrationDate = registrationDate;
     }
 
+    public Person() {
+
+    }
+
     public Long getId() {
         return id;
     }
