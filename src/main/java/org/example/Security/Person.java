@@ -23,7 +23,7 @@ public class Person {
     private String password;
 
     @NotBlank(message = "Домен не может быть пустым")
-    @Pattern(regexp = "^[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Некорректный формат домена")
+    @Pattern(regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Некорректный формат домена")
     @Column(columnDefinition = "NVARCHAR(255)")
     private String domain;
 
