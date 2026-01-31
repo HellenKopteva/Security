@@ -33,7 +33,12 @@ public class AdminController {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body("Здраствуйте уважаемый, " + userDetails.getUsername() + " админам тут всегда рады!");
     }
-
+    @GetMapping("")
+    public String adminPanel(Model model, @AuthenticationPrincipal UserDetails userDetails) {
+        model.addAttribute("userName", userDetails.getUsername());
+        model.addAttribute("isAdmin", true);
+        return "admin";
+    }
 //    @PostMapping("/create")
 //    public ResponseEntity<PersonDTO> createUser(@AuthenticationPrincipal UserDetails userDetails
 //    ){

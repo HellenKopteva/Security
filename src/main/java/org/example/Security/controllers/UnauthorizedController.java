@@ -31,4 +31,8 @@ public class UnauthorizedController {
         model.addAttribute("user", "Vasya");
         return "unauthorized";
     }
+    @GetMapping("/")
+    public String indexPage() {
+        return "redirect:/api/loginNew"; // Перенаправление на страницу логина
+    }
 }

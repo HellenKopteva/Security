@@ -39,7 +39,12 @@ public class HomeController {
         model.addAttribute("user", "Vasya");
         return "unauthorized";
     }
-
+    @GetMapping("")
+    public String homePage(Model model, @AuthenticationPrincipal UserDetails userDetails) {
+        model.addAttribute("username", userDetails.getUsername());
+        model.addAttribute("role", userDetails.getAuthorities());
+        return "home"; // Возвращает home.html из templates/
+    }
 //    @PostMapping("/create")
 //    public ResponseEntity<PersonDTO> createUser(@AuthenticationPrincipal UserDetails userDetails
 //    ){
