@@ -4,7 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
+import org.example.Security.entity.Authority;
 @Getter
 @Entity
 @Table(name = "persons")
@@ -37,5 +40,16 @@ public class Person {
         this.email = email;
         this.role = role;
         this.registrationDate = LocalDateTime.now();
+    }
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Authority> authorities = new HashSet<>();
+
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDateTime registrationDate) {
+        this.registrationDate = registrationDate;
     }
 }
